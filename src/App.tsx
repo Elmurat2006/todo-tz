@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import { TodoForm } from './components/TodoForm';
 import { TodoList } from './components/TodoList';
-import  GlobalStyle  from 'styled-components';
+import { observer } from "mobx-react-lite" // Or "mobx-react".
+
 import styled from 'styled-components'
 
 const TodoApp = styled.div`
@@ -22,7 +23,7 @@ const Heading1 = styled.h1`
     font-size: 24px;
 ` 
 
-function App() {
+function App  () {
   const [todos, setTodos] = useState<Array<Todo>>([]);
 
   const toggleComplete: ToggleComplete = selectedTodo => {
